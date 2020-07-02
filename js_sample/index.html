@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+      button {margin: 0px 10px;}
+  </style>
+</head>
+<body>
+  <div id="buttonsContainer"></div>
+  <script>
+    const buttonsContainer = document.getElementById("buttonsContainer");
+    for (let i = 0; i < 5; i++) {
+        const button = document.createElement("button");
+        button.innerText = 'button-' + i;
+        button.id = 'button-' + i;
+        button.setAttribute('index', i);
+        button.addEventListener("click", buttonClicked)
+        buttonsContainer.appendChild(button);
+    }
+
+    function buttonClicked(e) {
+        console.log(e.target.id)
+        console.log(e.target.getAttribute('index'));
+    }
+</script>
+</body>
+</html>
